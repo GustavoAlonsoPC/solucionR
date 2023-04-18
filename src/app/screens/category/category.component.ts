@@ -11,9 +11,9 @@ export class CategoryComponent implements OnInit {
   public bodyArray:Array<Product>=[
     {
         "id": 3,
-        "nombre": "Tennis adidas",
-        "precio": 250000.0,
-        "imagen": ""
+        "title": "Tennis adidas",
+        "price": 250000.0,
+        "image": ""
     }
   ] 
   constructor() { }
