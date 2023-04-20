@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { Product } from 'src/app/shared/models/products.model';
+import { ProductState } from '../ngrx/product.state';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,4 +11,9 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
 
+  counter$: Observable<number>;
+
+  constructor(private store: Store<{cart: ProductState}>) {
+    this.counter$ = store.select(state => state.cart.products.length);
+  }
 }

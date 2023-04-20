@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptorService } from './shared/services/auth-interceptor.service';
+import { StoreModule } from '@ngrx/store';
+import { DashboardModule } from './screens/dashboard/dashboard.module';
+import { cartReducer } from './screens/ngrx/car-products.reducer';
 
 @NgModule({
   declarations: [
@@ -13,7 +16,7 @@ import { AuthInterceptorService } from './shared/services/auth-interceptor.servi
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     {

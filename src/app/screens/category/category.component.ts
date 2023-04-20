@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { Product } from 'src/app/shared/models/products.model';
 import { ServiceMainService } from 'src/app/shared/services/service-main.service';
+import { ProductState } from '../ngrx/product.state';
+import { addToCart } from '../ngrx/car.actions';
 
 @Component({
   selector: 'app-category',
@@ -14,22 +17,23 @@ export class CategoryComponent implements OnInit {
 
   loading: boolean = true;
 
-  constructor(private service: ServiceMainService) { }
+  constructor(private service: ServiceMainService, private store: Store<ProductState>) { }
 
   ngOnInit(): void {
 
     this.loadProducts();
+    while (!this.bodyArray) {
+      this.loadProducts();
+    }
+    this.loading = false;
   }
 
-  addItem(item: any){
-    console.log(item)
+  addItem(item: Product): void{
+    this.store.dispatch(addToCart({ product: item }));
   }
 
   loadProducts(): void {
-    setTimeout(() => {
-      this.service.getProducts().subscribe(res => this.bodyArray = res);
-      this.loading = false;
-    }, 2000);
+      this.service.getProducts().subscribe(res => this.bodyArray = res); 
   }
 
 }

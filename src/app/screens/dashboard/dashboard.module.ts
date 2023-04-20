@@ -6,6 +6,8 @@ import { DashboardComponent } from './dashboard.component';
 import { HomeComponent } from '../home/home.component';
 import { CategoryComponent } from '../category/category.component';
 import { CarProductsComponent } from '../car-products/car-products.component';
+import { StoreModule } from '@ngrx/store';
+import { cartReducer } from '../ngrx/car-products.reducer';
 
 
 @NgModule({
@@ -17,7 +19,10 @@ import { CarProductsComponent } from '../car-products/car-products.component';
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    StoreModule.forRoot({
+      cart: cartReducer
+    })
   ]
 })
 export class DashboardModule { }
