@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Product } from 'src/app/shared/models/products.model';
 import { ServiceMainService } from 'src/app/shared/services/service-main.service';
-import { ProductState } from '../ngrx/product.state';
-import { addToCart } from '../ngrx/car.actions';
+import { ProductState } from '../../store/ngrx/product.state';
+import { addToCart } from '../../store/ngrx/car.actions';
 
 @Component({
   selector: 'app-category',

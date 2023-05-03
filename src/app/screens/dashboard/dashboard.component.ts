@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Product } from 'src/app/shared/models/products.model';
-import { ProductState } from '../ngrx/product.state';
+import { ProductState } from '../../store/ngrx/product.state';
 
 @Component({
   selector: 'app-dashboard',

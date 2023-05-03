@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, takeLast } from 'rxjs';
 import { Product } from 'src/app/shared/models/products.model';
-import { ProductState } from '../ngrx/product.state';
+import { ProductState } from '../../store/ngrx/product.state';
 import { Store, select } from '@ngrx/store';
 import { __values } from 'tslib';
 

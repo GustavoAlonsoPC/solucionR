@@ -7,7 +7,7 @@ import { HomeComponent } from '../home/home.component';
 import { CategoryComponent } from '../category/category.component';
 import { CarProductsComponent } from '../car-products/car-products.component';
 import { StoreModule } from '@ngrx/store';
-import { cartReducer } from '../ngrx/car-products.reducer';
+import { cartReducer } from '../../store/ngrx/car-products.reducer';
 
 
 @NgModule({

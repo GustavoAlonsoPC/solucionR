@@ -7,7 +7,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptorService } from './shared/services/auth-interceptor.service';
 import { StoreModule } from '@ngrx/store';
 import { DashboardModule } from './screens/dashboard/dashboard.module';
-import { cartReducer } from './screens/ngrx/car-products.reducer';
+import { cartReducer } from './store/ngrx/car-products.reducer';
 
 @NgModule({
   declarations: [
